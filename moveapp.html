@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    
+       <script src="./moveapp.angular.min.js"></script>    
+
+    <script src="./moveapp.js"></script>
+ 
+    <script src="./moveappMainController.js"></script>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link href="./moveapp.css" rel="stylesheet" />
+ 
+  </head>
+  <body ng-app="MoveLogApp">
+    <div class="header">
+      <div class="container">
+        MOVE Log
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+
+        <div class="row" ng-repeat="exercise in exercises">
+          <div class="exercise-icon col-xs-2"><img src="{{ exercise.icon }}"> </div>
+            
+          <div class="col-xs-6">
+            <p class="exercise-name">{{exercise.name}} </p>
+          </div>
+          
+          <div class="col-xs-4 counters">
+            <span class="decrease" ng-click="decrease($index)">-</span><span class="count">{{exercise.count}}  </span><span class="increase" ng-click="increase($index)">+</span>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+      </div>
+    </div>
+    
+
+
+  </body>
+</html>
